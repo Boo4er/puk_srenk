@@ -15,7 +15,7 @@ public class Main {
 
         Rosha calculator = new Calculator();
         int summResult = calculator.add(5, 6);
-        int minusResult = calculator.minus(3, 12);
+        int minusResult = calculator.subtract(3, 12);
         System.out.println(summResult);
         System.out.println(minusResult);
 
@@ -24,5 +24,7 @@ public class Main {
         field.setShopa(1488);
         System.out.println(field.getShopa());
 
+        Rosha sloshna = new Calculator();
+        sloshna.divide(5, 0);
     }
 }

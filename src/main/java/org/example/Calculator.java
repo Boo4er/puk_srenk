@@ -1,6 +1,6 @@
 package org.example;
 
-class Calculator implements Rosha {
+public class Calculator implements Rosha {
 
     private int shopa = 10;
 
@@ -18,15 +18,20 @@ class Calculator implements Rosha {
     }
 
     @Override
-    public int minus(int a, int b) {
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    public double divide(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Idi nahoi");
+        }
+        return (double) a / b;
+    }
+
+    @Override
+    public int subtract(int a, int b) {
         return a - b;
     }
-}
-
-interface Rosha {
-
-    public int minus(int a, int b);
-
-    public int add(int a, int b);
-
 }
