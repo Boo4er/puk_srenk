@@ -25,6 +25,9 @@ public class Main {
         System.out.println(field.getShopa());
 
         Rosha sloshna = new Calculator();
-        sloshna.divide(5, 0);
+      //  sloshna.divide(5, 0);
+
+        StringLoops stringi = new StringLoops();
+        stringi.loop("Перебор символов");
     }
 }
