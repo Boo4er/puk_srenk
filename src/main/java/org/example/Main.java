@@ -29,5 +29,9 @@ public class Main {
 
         StringLoops stringi = new StringLoops();
         stringi.loop("Перебор символов");
+        stringi.whileLoop();
+        stringi.dooWhileLoop();
+        stringi.forEachLoop();
+       // stringi.unHollyLoop();
     }
 }
