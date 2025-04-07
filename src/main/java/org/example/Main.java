@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.core.task.ArraySum;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -25,13 +27,16 @@ public class Main {
         System.out.println(field.getShopa());
 
         Rosha sloshna = new Calculator();
-      //  sloshna.divide(5, 0);
+        //  sloshna.divide(5, 0);
 
         StringLoops stringi = new StringLoops();
         stringi.loop("Перебор символов");
         stringi.whileLoop();
         stringi.dooWhileLoop();
         stringi.forEachLoop();
-       // stringi.unHollyLoop();
+        // stringi.unHollyLoop();
+        ArraySum summ = new ArraySum();
+        int result = summ.arraysum(new int[]{2, 6, 8, 3, 5, 3});
+        System.out.println("ArraySum " + result);
     }
 }
