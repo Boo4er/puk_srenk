@@ -8,8 +8,9 @@ public class StringLoops {
 
     public void loop(String a) {
         System.out.println("Перебор символов");
+        char c;
         for (int i = 0; i < a.length(); i++) {
-            char c = a.charAt(i);
+            c = a.charAt(i);
             System.out.println(" symbol " + i + " : " + c);
         }
     }
