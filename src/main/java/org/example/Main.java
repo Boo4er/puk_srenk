@@ -38,5 +38,6 @@ public class Main {
         ArraySum summ = new ArraySum();
         int result = summ.arraysum(new int[]{2, 6, 8, 3, 5, 3});
         System.out.println("ArraySum " + result);
+        //test
     }
 }
