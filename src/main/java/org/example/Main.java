@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.core.task.ArraySum;
+import org.example.core.task.GuessNumberGame;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -42,36 +43,7 @@ public class Main {
         int result = summ.arraysum(new int[]{2, 6, 8, 3, 5, 3});
         System.out.println("ArraySum " + result);
         //test
-
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int min = 1;
-        int max = 100;
-        int attempts = 0;
-        int maxAttempts = 7;
-        int secretNumber = random.nextInt(max - min + 1) + min;
-        boolean hasWon = false;
-        System.out.println("Добро пожаловать в игру 'Угадай число'!");
-        System.out.printf("Я загадал число от %d до %d. Попробуй угадать!\n", min, max);
-        System.out.printf("У тебя есть %d опыток \n", maxAttempts);
-        while (attempts < maxAttempts && !hasWon) {
-            System.out.println("Твой вариант.");
-            int guess = scanner.nextInt();
-            attempts++;
-            if (guess == secretNumber) {
-                hasWon = true;
-                System.out.printf("Поздравляю ты угадал число %d за %d попыток!\n", secretNumber, attempts);
-            }
-            if (guess < secretNumber) {
-                System.out.println("Мое число больше.");
-            }
-            if (guess > secretNumber) {
-                System.out.println("Мое число меньше");
-            }
-        }
-        if (!hasWon) {
-            System.out.printf("Ты проиграл! Я загадал число %d.\n", secretNumber);
-        }
-        scanner.close();
+        GuessNumberGame game = new GuessNumberGame();
+        game.run();
     }
 }
