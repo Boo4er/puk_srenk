@@ -20,6 +20,7 @@ public class GuessNumberGame {
     private static String MORE_NUMBER_MESSAGE = "Мое число больше.";
     private static String LESS_NUMBER_MESSAGE = "Мое число меньше";
     private static String YOU_LOSE_MESSAGE = "Ты проиграл! Я загадал число %d.\n";
+    private static String ERROR_404 = "Ошибка: введите целое число!";
 
     public void run() {
         System.out.println(GREETING);
@@ -35,18 +36,26 @@ public class GuessNumberGame {
     private void handleUserGuesses() {
         while (attempts < maxAttempts && !hasWon) {
             System.out.println(YOUR_CHOICE_MESSAGE);
-            int guess = scanner.nextInt();
-            attempts++;
-            if (guess == secretNumber) {
-                hasWon = true;
-                System.out.printf(CONGRATULATION_MESSAGE, secretNumber, attempts);
-            }
-            if (guess < secretNumber) {
-                System.out.println(MORE_NUMBER_MESSAGE);
-            }
-            if (guess > secretNumber) {
-                System.out.println(LESS_NUMBER_MESSAGE);
+            if (scanner.hasNextInt()) {
+                int guess = scanner.nextInt();
+                attempts++;
+                if (guess == secretNumber) {
+                    hasWon = true;
+                    System.out.printf(CONGRATULATION_MESSAGE, secretNumber, attempts);
+                }
+                if (guess < secretNumber) {
+                    System.out.println(MORE_NUMBER_MESSAGE);
+                }
+                if (guess > secretNumber) {
+                    System.out.println(LESS_NUMBER_MESSAGE);
+
+                }
+            } else {
+                System.out.println(ERROR_404);
+                scanner.next();
             }
         }
     }
+
 }
+
